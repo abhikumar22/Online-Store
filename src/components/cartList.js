@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import {
     useSelector,
     // , useDispatch
@@ -10,10 +10,18 @@ import {
 } from 'react-router-dom'
 
 import * as actions from '../store/reducers/cart'
+import CalCulateTotalPrice from '../utils/utility'
+
 
 
 const CartList = ({ someProp }) => {
     const cartList = useSelector(state => state.entities.cart, shallowEqual)
+    
+    const [totalAmount,setAmount]=useState(CalCulateTotalPrice(cartList))
+    useEffect(() => {
+        setAmount(CalCulateTotalPrice(cartList))
+      },[cartList]);
+    console.log("redder carlist")
     return (
         <div className="text-center">
             {/* <ol> */}
@@ -26,7 +34,8 @@ const CartList = ({ someProp }) => {
 
                 </div>
                 :
-                cartList.map((data, index) =>
+                <div>
+                {cartList.map((data, index) =>
                     <li key={index}> {data.name} *  <button onClick={() => {
                         if (data.count === 1) 
                             actions.deleteFromCart(data.idd)
@@ -38,7 +47,9 @@ const CartList = ({ someProp }) => {
                         actions.deleteFromCart(data.idd)
                         // console.log("ll", data)
                     }} className="btn bg-primary my-2 text-white">Delete From Cart</button></li>
-                )
+                )}
+                <div> Total Amount To be paid = {totalAmount}</div>
+                </div>
             }
             {/* </ol> */}
         </div>
