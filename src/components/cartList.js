@@ -28,7 +28,7 @@ const CartList = ({ someProp }) => {
                 :
                 cartList.map((data, index) =>
                     <li key={index}> {data.name} = {data.price} <button onClick={() => {
-                        actions.deleteFromCart(data.id)
+                        actions.deleteFromCart(data.idd)
                         // console.log("ll", data)
                     }} className="btn bg-primary my-2 text-white">Delete From Cart</button></li>
                 )

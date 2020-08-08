@@ -37,12 +37,12 @@ export default function reducer(cart = [], action) {
                 ...cart,
                 //add new product
                 {
-                    id: ++lastId,
+                    idd: ++lastId,
                     ...action.payload.data
                 }
             ]
         case DELETE_FROM_CART:
-            return cart.filter(val => val.id !== action.payload.id)
+            return cart.filter(val => val.idd !== action.payload.id)
         default:
             return cart;
     }
