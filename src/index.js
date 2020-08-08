@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import EntryFile from './entryFile';
+
+
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <EntryFile />
   </React.StrictMode>,
   document.getElementById('root')
 );

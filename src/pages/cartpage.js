@@ -1,9 +1,10 @@
 import React from 'react';
+import CartList from '../components/cartList'
 
 export default function CartPage() {
   return (
-    <div>
-      <h1>Cart Page</h1>
+    <div className="text-center">
+      <CartList/>
     </div>
   );
 }
