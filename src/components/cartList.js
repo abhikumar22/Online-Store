@@ -21,7 +21,6 @@ const CartList = ({ someProp }) => {
     useEffect(() => {
         setAmount(CalCulateTotalPrice(cartList))
     }, [cartList]);
-    console.log("redder carlist")
     return (
         <div className="text-center mt-5">
             {/* <ol> */}
