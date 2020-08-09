@@ -11,7 +11,6 @@ import {
 
 import * as actions from '../store/reducers/cart'
 import CalCulateTotalPrice from '../utils/utility'
-import AddIcon from '@material-ui/icons/Add';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { IconButton } from '@material-ui/core';
@@ -42,7 +41,7 @@ const CartList = ({ someProp }) => {
                 :
                 <div className="d-flex justify-content-center align-items-center">
                 <div className="container bg-primary mt-4 p-3 shadow-lg p-3 mb-5 bg-white rounded mx-4 mb-2">
-                    <span className="text-start"><h4>Cart ({cartList.length})</h4></span>
+                    <span className="text-start"><h4 className="ml-3">Cart ({cartList.length})</h4></span>
                     <hr />
                     <div className="row p-3">
                         <div className="col-sm-8 col-md-8 col-lg-8">
@@ -73,12 +72,12 @@ const CartList = ({ someProp }) => {
                                         </div>
                                         <div className="col-9 col-sm-9 col-md-9 col-lg-9">
                                             <h4>{data.name}</h4>
-                                            <div className="mh-50 text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
-                                            <div className="row mt-2 pl-3" style={{ display: "flex", alignItems: 'center' }}>
+                                            <div className="mh-150 text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
+                                            <div className="row mt-2 pl-3 d-flex justify-content-between" style={{ display: "flex", alignItems: 'center' }}>
                                                 <div className=""><h4>₹ {data.price * data.count}</h4></div>
                                                 <button onClick={() => {
                                                     actions.deleteFromCart(data.id)
-                                                }} type="button" className="btn btn-outline-danger ml-3">Remove</button>
+                                                }} type="button" className="btn btn-outline-danger mr-5">Remove</button>
                                             </div>
                                         </div>
 
@@ -94,7 +93,7 @@ const CartList = ({ someProp }) => {
                             <span><h5 className="text-uppercase text-muted">Order details</h5></span>
                             <hr />
                             <div className="d-flex justify-content-between">
-                                <span>Price (3 items)</span>
+                                <span>Price ({cartList.length} items)</span>
                                 <span>₹ {totalAmount}</span>
                             </div>
                             <br />
