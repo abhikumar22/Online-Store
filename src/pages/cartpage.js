@@ -3,7 +3,7 @@ import CartList from '../components/cartList'
 
 export default function CartPage() {
   return (
-    <div className="text-center">
+    <div className="">
       <CartList/>
     </div>
   );
