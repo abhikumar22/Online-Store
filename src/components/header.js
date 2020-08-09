@@ -23,7 +23,7 @@ export default function Header() {
     // console.log("cartItems",cartItems.length)
     return (
         <div className="navStyle">
-            <div className="row text-center justify-content-between px-5">
+            <div className="row text-center justify-content-between mx-3">
                 <IconButton className="text-white text-center aling-items-center">
                     <div>
                     <LocalMallIcon className="header__icon" fontSize="small" />

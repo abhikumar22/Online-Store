@@ -18,6 +18,75 @@ let obj = [{
 }, {
   name: "Dhinchak pooja",
   price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
+}, {
+  name: "Dhinchak pooja",
+  price: 11
 }]
 
 actions.addProductList(obj)
