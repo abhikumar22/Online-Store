@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export default function CalCulateTotalPrice(cartList) {
     if (cartList.length === 0)
