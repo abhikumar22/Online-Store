@@ -22,15 +22,18 @@ const CartList = ({ someProp }) => {
         setAmount(CalCulateTotalPrice(cartList))
     }, [cartList]);
     return (
-        <div className="text-center mt-5">
-            {/* <ol> */}
+        <div>
             {cartList.length === 0 ?
-                <div >
-                    <h1>Your cart is empty!</h1>
-                    <h3>Add items to it now.</h3>
-                    <Link to="/"><button>Shop Now</button></Link>
+                <div className="mt-5 text-center d-flex justify-content-center align-items-center" >
+                    {/* <ol> */}
+                    <div className="col col-8 col-md-6 col-sm-6 col-lg-3 p-2 shadow-lg p-3 mb-5 bg-white rounded">
+                        <img className="img-fluid" src={require('../assets/images/emptyCartImage.jpg')} />
+                        <span className="col"><h5>Your cart is empty!</h5></span>
+                        <span className="col">Add items to it now</span>
+                        <span className="col"> <Link to="/">  <button className="btn btn-primary mt-3 mb-3">Shop Now</button></Link></span>
 
 
+                    </div>
                 </div>
                 :
                 <div>
@@ -51,7 +54,6 @@ const CartList = ({ someProp }) => {
                     <button className="btn btn-success mt-5">Checkout</button>
                 </div>
             }
-            {/* </ol> */}
         </div>
     );
 }

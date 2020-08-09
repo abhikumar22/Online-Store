@@ -22,7 +22,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="text-center ">
+      <div className="text-center m-5">
         {/* <h1>All Products Listed below</h1> */}
         <ProductList/>
       </div>

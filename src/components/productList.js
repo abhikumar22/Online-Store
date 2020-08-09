@@ -38,7 +38,7 @@ const ProductList = ({ someProp }) => {
                         <div className="card-image">
                             {/* <div  style={{width:'100',height:'100',backgroundColor:'red'}}> */}
                             {/* efcds */}
-                            <img src={require('../assets/images/defaultImage.jpg')} alt={data.title} style={{}} />
+                            <img className="img-fluid" src={require('../assets/images/defaultImage.jpg')} alt={data.title}/>
                             {/* </div> */}
                             {/* <span className="card-title">{data.name}</span> */}
                             <span to="/" className="btn-floating halfway-fab waves-effect waves-light red"
@@ -51,9 +51,9 @@ const ProductList = ({ someProp }) => {
                             </span>
                         </div>
 
-                        <div className="card-content mb-2">
+                        <div className="card-content mb-2 mx-2">
                             <p>Lorem ipsum dolor sit amet, pro ea sale delectus cotidieque, mea veri integre constituto ea.</p>
-                            <p><b>Price: ₹ {data.price}</b><IconButton onClick={() => {
+                            <p className=" aling-items-center justify-content-center"><b>Price: ₹ {data.price}</b><IconButton onClick={() => {
                                     const val = {
                                         productId: data.id,
                                         name: data.name,
