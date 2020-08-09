@@ -14,8 +14,14 @@ const ProductList = ({ someProp }) => {
         <div className="text-center">
             {productList.map((data, index) =>
                 <li key={index}> {data.name} = {data.price} <button onClick={() => {
-                    actions.addToCart(data)
+                    // actions.addToCart(data)
                     // console.log("ll", data)
+                    const val = {
+                        productId: data.id,
+                        name: data.name,
+                        price: data.price
+                    }
+                    actions.addToCart(val)
                 }} className="btn bg-primary my-2 text-white">Add to cart</button>
                 </li>
             )}

@@ -27,19 +27,19 @@ export function deleteFromCart(id) {
         }
     });
 }
-export function addParticularProduct(id) {
+export function addParticularProduct(productId) {
     return store.dispatch({
         type: ADD_PART_PRODUCT,
         payload: {
-            id: id
+            productId: productId
         }
     });
 }
-export function deleteParticularProduct(id) {
+export function deleteParticularProduct(productId) {
     return store.dispatch({
         type: DELETE_PART_PRODUCT,
         payload: {
-            id: id
+            productId: productId
         }
     });
 }
@@ -51,11 +51,11 @@ export default function reducer(cart = [], action) {
 
     switch (action.type) {
         case ADD_TO_CART:
-            let isThere = cart.some(val => val.id === action.payload.data.id);
-            if (isThere) {
-                const index = action.payload.data.id;
+            let isThereAlready = cart.some(val => val.productId === action.payload.data.productId);
+            if (isThereAlready) {
+                const index = action.payload.data.productId;
                 return cart.map((item) => (
-                    item.id === index ? { ...item, count: item.count + 1 } : item
+                    item.productId === index ? { ...item, count: item.count + 1 } : item
                 ))
             }
 
@@ -66,20 +66,20 @@ export default function reducer(cart = [], action) {
                     //add new product
                     {
                         count: 1,
-                        idd: ++lastId,
+                        id: ++lastId,
                         ...action.payload.data
                     }
                 ]
         case ADD_PART_PRODUCT:
             return cart.map((item) => (
-                item.id === action.payload.id ? { ...item, count: item.count + 1 } : item
+                item.productId === action.payload.productId ? { ...item, count: item.count + 1 } : item
             ))
         case DELETE_PART_PRODUCT:
             return cart.map((item) => (
-                item.id === action.payload.id ? { ...item, count: item.count -1 } : item
+                item.productId === action.payload.productId ? { ...item, count: item.count -1 } : item
             ))
         case DELETE_FROM_CART:
-            return cart.filter(val => val.idd !== action.payload.id)
+            return cart.filter(val => val.id !== action.payload.id)
         default:
             return cart;
     }

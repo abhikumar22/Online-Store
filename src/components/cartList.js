@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     useSelector,
     // , useDispatch
@@ -16,11 +16,11 @@ import CalCulateTotalPrice from '../utils/utility'
 
 const CartList = ({ someProp }) => {
     const cartList = useSelector(state => state.entities.cart, shallowEqual)
-    
-    const [totalAmount,setAmount]=useState(CalCulateTotalPrice(cartList))
+
+    const [totalAmount, setAmount] = useState(CalCulateTotalPrice(cartList))
     useEffect(() => {
         setAmount(CalCulateTotalPrice(cartList))
-      },[cartList]);
+    }, [cartList]);
     console.log("redder carlist")
     return (
         <div className="text-center">
@@ -35,20 +35,20 @@ const CartList = ({ someProp }) => {
                 </div>
                 :
                 <div>
-                {cartList.map((data, index) =>
-                    <li key={index}> {data.name} *  <button onClick={() => {
-                        if (data.count === 1) 
-                            actions.deleteFromCart(data.idd)
-                        else
-                            actions.deleteParticularProduct(data.idd)
-                    }}>-</button> {data.count}  <button onClick={() => { 
-                        actions.addParticularProduct(data.idd)
-                    }}>+</button> = {data.price * data.count} <button onClick={() => {
-                        actions.deleteFromCart(data.idd)
-                        // console.log("ll", data)
-                    }} className="btn bg-primary my-2 text-white">Delete From Cart</button></li>
-                )}
-                <div> Total Amount To be paid = {totalAmount}</div>
+                    {cartList.map((data, index) =>
+                        <li key={index}> {data.name} *  <button onClick={() => {
+                            if (data.count === 1)
+                                actions.deleteFromCart(data.id)
+                            else
+                                actions.deleteParticularProduct(data.productId)
+                        }}>-</button> {data.count}  <button onClick={() => {
+                            actions.addParticularProduct(data.productId)
+                        }}>+</button> = {data.price * data.count} <button onClick={() => {
+                            actions.deleteFromCart(data.id)
+                            // console.log("ll", data)
+                        }} className="btn bg-primary my-2 text-white">Delete From Cart</button></li>
+                    )}
+                    <div> Total Amount To be paid = {totalAmount}</div>
                 </div>
             }
             {/* </ol> */}
