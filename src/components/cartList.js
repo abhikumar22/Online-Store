@@ -40,49 +40,54 @@ const CartList = ({ someProp }) => {
                     </div>
                 </div>
                 :
-                <div className="container bg-primary mt-4 p-3 shadow-lg p-3 mb-5 bg-white rounded mx-4Z">
-                    <span className="text-start"><h4>Cart (2)</h4></span>
+                <div className="container bg-primary mt-4 p-3 shadow-lg p-3 mb-5 bg-white rounded mx-4 mb-2">
+                    <span className="text-start"><h4>Cart ({cartList.length})</h4></span>
                     <hr />
                     <div className="row p-3">
                         <div className="col-sm-8 col-md-8 col-lg-8">
-                            <div>
-                                {cartList.map((data, index) =>
-                                    <div className="row">
-                                        <div className="col-3 col-sm-3 col-md-3 col-lg-3 ">
-                                            <div className="bg-secondary">
-                                                <img className="img-fluid" src={require('../assets/images/defualt_product_image.jpg')} />
-                                            </div>
-                                            <div className="row d-flex justify-content-center align-items-center">
-                                                <IconButton onClick={() => {
-                                                    if (data.count === 1)
-                                                        actions.deleteFromCart(data.id)
-                                                    else
-                                                        actions.deleteParticularProduct(data.productId)
-                                                }}>
-                                                    <RemoveCircleIcon />
-                                                </IconButton>
-                                                <div className>{data.count}</div>
-                                                <IconButton onClick={() => {
-                                                    actions.addParticularProduct(data.productId)
-                                                }}>
-                                                    <AddCircleIcon />
-                                                </IconButton>
-                                            </div>
+                            {/* <div> */}
+                            {cartList.map((data, index) =>
+<div key={index}>
+                                <div className="row">
+                                    <div className="col-3 col-sm-3 col-md-3 col-lg-3">
+                                        <div className="img-fluid">
+                                            <img className="img-fluid" src={require('../assets/images/defualt_product_image.jpg')} />
                                         </div>
-                                        <div className="col-9 col-sm-9 col-md-9 col-lg-9">
-                                            <h4>{data.name}</h4>
-                                            <div className="mh-50">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
-                                            <div className="row mt-4 pl-3" style={{ display: "flex", alignItems: 'center' }}>
-                                                <div className=""><h4>₹ {data.price}</h4></div>
-                                                <button onClick={() => {
+                                        <div className="row d-flex justify-content-center align-items-center mt-1">
+                                            <IconButton className="col-4 col-sm-4 col-md-4 col-lg-4  m-0" onClick={() => {
+                                                if (data.count === 1)
                                                     actions.deleteFromCart(data.id)
-                                                }} type="button" className="btn btn-outline-danger ml-3">Remove</button>
-                                            </div>
+                                                else
+                                                    actions.deleteParticularProduct(data.productId)
+                                            }}>
+                                                <RemoveCircleIcon />
+                                            </IconButton>
+                                            <div className="">{data.count}</div>
+                                            <IconButton className="col-4 col-sm-4 col-md-4 col-lg-4  m-0" onClick={() => {
+                                                actions.addParticularProduct(data.productId)
+                                            }}>
+                                                <AddCircleIcon />
+                                            </IconButton>
+                                        </div>
+                                    </div>
+                                    <div className="col-9 col-sm-9 col-md-9 col-lg-9">
+                                        <h4>{data.name}</h4>
+                                        <div className="mh-50 text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
+                                        <div className="row mt-2 pl-3" style={{ display: "flex", alignItems: 'center' }}>
+                                            <div className=""><h4>₹ {data.price * data.count}</h4></div>
+                                            <button onClick={() => {
+                                                actions.deleteFromCart(data.id)
+                                            }} type="button" className="btn btn-outline-danger ml-3">Remove</button>
                                         </div>
                                     </div>
 
-                                )}
+                                    
+                                </div>
+                            
+                            <hr/>
                             </div>
+                            )}
+                            {/* </div> */}
                         </div>
                         <div className="col-sm-4 col-md-4 col-lg-4">
                             <span><h5 className="text-uppercase text-muted">Order details</h5></span>
@@ -103,7 +108,9 @@ const CartList = ({ someProp }) => {
                             </div>
                         </div>
                     </div>
-                </div>}
+
+                </div>
+            }
         </div>
     );
 }
