@@ -23,7 +23,7 @@ const CartList = ({ someProp }) => {
     }, [cartList]);
     console.log("redder carlist")
     return (
-        <div className="text-center">
+        <div className="text-center mt-5">
             {/* <ol> */}
             {cartList.length === 0 ?
                 <div >
@@ -49,6 +49,7 @@ const CartList = ({ someProp }) => {
                         }} className="btn bg-primary my-2 text-white">Delete From Cart</button></li>
                     )}
                     <div> Total Amount To be paid = {totalAmount}</div>
+                    <button className="btn btn-success mt-5">Checkout</button>
                 </div>
             }
             {/* </ol> */}

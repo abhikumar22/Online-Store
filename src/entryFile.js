@@ -22,7 +22,7 @@ let obj = [{
 
 actions.addProductList(obj)
 actions.addProduct({
-  name: "Rohit kumar",
+  name: "RamDEv Baba",
   price: 786
 })
 

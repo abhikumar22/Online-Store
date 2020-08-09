@@ -8,6 +8,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from "@material-ui/core/IconButton"
 import { Badge } from '@material-ui/core';
+import LocalMallIcon from '@material-ui/icons/LocalMall';
 
 import {
     useSelector,
@@ -23,7 +24,12 @@ export default function Header() {
     return (
         <div className="navStyle">
             <div className="row text-center justify-content-between px-5">
-                <IconButton><Link to="/"><span className="navbar-brand text-white" >Online Store</span></Link></IconButton>
+                <IconButton className="text-white text-center aling-items-center">
+                    <div>
+                    <LocalMallIcon className="header__icon" fontSize="small" />
+                    <Link to="/"><span className="navbar-brand text-white ml-2" >Online Store</span></Link>
+                    </div>
+                </IconButton>
                 {/* <div className="wishList px-2">
                     <Link to="/wishlist">
                     <IconButton>
