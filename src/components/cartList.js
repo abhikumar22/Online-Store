@@ -26,7 +26,7 @@ const CartList = ({ someProp }) => {
         setAmount(CalCulateTotalPrice(cartList))
     }, [cartList]);
     return (
-        <div>
+        <div className>
             {cartList.length === 0 ?
                 <div className="mt-5 text-center d-flex justify-content-center align-items-center" >
                     {/* <ol> */}
@@ -40,6 +40,7 @@ const CartList = ({ someProp }) => {
                     </div>
                 </div>
                 :
+                <div className="d-flex justify-content-center align-items-center">
                 <div className="container bg-primary mt-4 p-3 shadow-lg p-3 mb-5 bg-white rounded mx-4 mb-2">
                     <span className="text-start"><h4>Cart ({cartList.length})</h4></span>
                     <hr />
@@ -47,45 +48,45 @@ const CartList = ({ someProp }) => {
                         <div className="col-sm-8 col-md-8 col-lg-8">
                             {/* <div> */}
                             {cartList.map((data, index) =>
-<div key={index}>
-                                <div className="row">
-                                    <div className="col-3 col-sm-3 col-md-3 col-lg-3">
-                                        <div className="img-fluid">
-                                            <img className="img-fluid" src={require('../assets/images/defualt_product_image.jpg')} />
+                                <div key={index}>
+                                    <div className="row">
+                                        <div className="col-3 col-sm-3 col-md-3 col-lg-3">
+                                            <div className="img-fluid">
+                                                <img className="img-fluid" src={require('../assets/images/defualt_product_image.jpg')} />
+                                            </div>
+                                            <div className="row d-flex justify-content-center align-items-center mt-1">
+                                                <IconButton className="col-4 col-sm-4 col-md-4 col-lg-4  m-0" onClick={() => {
+                                                    if (data.count === 1)
+                                                        actions.deleteFromCart(data.id)
+                                                    else
+                                                        actions.deleteParticularProduct(data.productId)
+                                                }}>
+                                                    <RemoveCircleIcon />
+                                                </IconButton>
+                                                <div className="">{data.count}</div>
+                                                <IconButton className="col-4 col-sm-4 col-md-4 col-lg-4  m-0" onClick={() => {
+                                                    actions.addParticularProduct(data.productId)
+                                                }}>
+                                                    <AddCircleIcon />
+                                                </IconButton>
+                                            </div>
                                         </div>
-                                        <div className="row d-flex justify-content-center align-items-center mt-1">
-                                            <IconButton className="col-4 col-sm-4 col-md-4 col-lg-4  m-0" onClick={() => {
-                                                if (data.count === 1)
+                                        <div className="col-9 col-sm-9 col-md-9 col-lg-9">
+                                            <h4>{data.name}</h4>
+                                            <div className="mh-50 text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
+                                            <div className="row mt-2 pl-3" style={{ display: "flex", alignItems: 'center' }}>
+                                                <div className=""><h4>₹ {data.price * data.count}</h4></div>
+                                                <button onClick={() => {
                                                     actions.deleteFromCart(data.id)
-                                                else
-                                                    actions.deleteParticularProduct(data.productId)
-                                            }}>
-                                                <RemoveCircleIcon />
-                                            </IconButton>
-                                            <div className="">{data.count}</div>
-                                            <IconButton className="col-4 col-sm-4 col-md-4 col-lg-4  m-0" onClick={() => {
-                                                actions.addParticularProduct(data.productId)
-                                            }}>
-                                                <AddCircleIcon />
-                                            </IconButton>
+                                                }} type="button" className="btn btn-outline-danger ml-3">Remove</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="col-9 col-sm-9 col-md-9 col-lg-9">
-                                        <h4>{data.name}</h4>
-                                        <div className="mh-50 text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
-                                        <div className="row mt-2 pl-3" style={{ display: "flex", alignItems: 'center' }}>
-                                            <div className=""><h4>₹ {data.price * data.count}</h4></div>
-                                            <button onClick={() => {
-                                                actions.deleteFromCart(data.id)
-                                            }} type="button" className="btn btn-outline-danger ml-3">Remove</button>
-                                        </div>
+
+
                                     </div>
 
-                                    
+                                    <hr />
                                 </div>
-                            
-                            <hr/>
-                            </div>
                             )}
                             {/* </div> */}
                         </div>
@@ -110,6 +111,7 @@ const CartList = ({ someProp }) => {
                     </div>
 
                 </div>
+           </div>
             }
         </div>
     );
