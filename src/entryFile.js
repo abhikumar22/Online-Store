@@ -7,86 +7,65 @@ import * as actions from './store/reducers/products'
 const store = configureStore;
 
 let obj = [{
-  name: "vimal",
-  price: 35
+  name: "Adidas Shoes",
+  price: 3500
 }, {
-  name: "Binod",
-  price: 99
+  name: "Nike shoes",
+  price: 990
 }, {
-  name: "Deepak Kalal",
-  price: 55
+  name: "Realme 3 pro",
+  price: 11000
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Iphone 11",
+  price: 60000
+},{
+  name: "Adidas Shoes",
+  price: 3500
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Nike shoes",
+  price: 990
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Realme 3 pro",
+  price: 11000
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Iphone 11",
+  price: 60000
+},{
+  name: "Adidas Shoes",
+  price: 3500
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Nike shoes",
+  price: 990
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Realme 3 pro",
+  price: 11000
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Iphone 11",
+  price: 60000
+},{
+  name: "Adidas Shoes",
+  price: 3500
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Nike shoes",
+  price: 990
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Realme 3 pro",
+  price: 11000
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Iphone 11",
+  price: 60000
+},{
+  name: "Adidas Shoes",
+  price: 3500
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Nike shoes",
+  price: 990
 }, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Realme 3 pro",
+  price: 11000
 }, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
-}, {
-  name: "Dhinchak pooja",
-  price: 11
+  name: "Iphone 11",
+  price: 60000
 }]
 
 actions.addProductList(obj)
